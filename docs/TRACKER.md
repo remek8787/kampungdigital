@@ -30,10 +30,11 @@ Updated: 2026-08-21
 - [x] Backend install/check + password helper test.
 - [x] TypeScript build checks enabled and passed.
 - [ ] Mobile/desktop screenshot inspection.
-- [ ] Critical route crawl.
+- [x] Critical route and asset crawl on local standalone preview (15 routes + 16 discovered assets returned HTTP 200).
 
 ## Verification notes
-- Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors.
+- Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections.
+- Standalone runtime verified after copying `public/` and `.next/static` as performed by the production Dockerfile.
 - Backend syntax: all JS passed `node --check`; bcrypt + legacy MD5 helper test passed.
 - Backend npm audit: 0 vulnerabilities.
 - Frontend dependencies upgraded: Next 15.5.23 and jsPDF 4.2.1. Remaining audit: 6 findings (1 moderate, 5 high), notably `xlsx@0.18.5` with no npm fix available plus transitive findings. Treat spreadsheet import/export as preview-only until xlsx replacement/migration is completed.
@@ -42,8 +43,8 @@ Updated: 2026-08-21
 
 ## Stage 4 — External artifacts
 - [x] Coret concept map created and shared: https://coret.id/share/957b3603bb8e48acc76141334fa6da0835195f1b85ab8d6d
-- [ ] Git repo initialized and remote connected.
-- [ ] Commit/push verified.
+- [x] Git repo initialized and remote connected.
+- [x] Commit/push verified on `main` (`728026c`).
 
 ## Stage 5 — Deployment
 - [x] DNS resolves to VPS.
