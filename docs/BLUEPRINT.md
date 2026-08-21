@@ -110,6 +110,13 @@ Prinsip:
 - Tabel penting memiliki pencarian, filter, dan tampilan mobile yang masuk akal.
 - Aksesibilitas dasar: semantic HTML, kontras, label, focus state, keyboard.
 
+Implementasi workspace 2026-08-21:
+- Shell aplikasi memakai sidebar hijau gelap dengan menu berkelompok: Utama, Data Kampung, Operasional, dan Sistem; akses tetap dibatasi sesuai role.
+- Header memprioritaskan konteks halaman, pencarian lintas data untuk pengurus, status layanan, dan menu akun tanpa notifikasi contoh/fiktif.
+- Dashboard Super Admin menjadi pusat kendali operasional: ringkasan dana/partisipasi, metrik warga-rumah-pengelola-transaksi, progres pembayaran, kondisi sistem, dan akses cepat.
+- Mobile memakai target sentuh minimal 44px, tombol aksi bertumpuk, teks sapaan dua baris, nominal aman membungkus, dan tidak boleh memiliki horizontal overflow.
+- Runtime self-hosted tidak menggunakan Vercel Analytics; aset identitas dan ikon aplikasi disajikan lokal.
+
 ## 9. Data dan privasi
 
 - NIK, nomor telepon, alamat, transaksi, dan presensi adalah data sensitif.
@@ -130,7 +137,8 @@ Sebelum deploy:
 6. Build dan test lokal.
 
 Deployment live 2026-08-21:
-- Release: `/opt/kampungdigital/releases/20260821-1320`, aktif melalui `/opt/kampungdigital/current`.
+- Release awal: `/opt/kampungdigital/releases/20260821-1320`.
+- Release aktif setelah redesain: `/opt/kampungdigital/releases/20260821-1412-redesign`, aktif melalui `/opt/kampungdigital/current`; pointer lama dan unit dibackup sebelum promosi.
 - Frontend: `127.0.0.1:3100`; backend: `127.0.0.1:5106`; MariaDB: `127.0.0.1:3306`.
 - Unit khusus: `kampungdigital-frontend.service` dan `kampungdigital-backend.service`.
 - Database/user khusus: `kampungdigital` / `kampungdigital_app@127.0.0.1`.

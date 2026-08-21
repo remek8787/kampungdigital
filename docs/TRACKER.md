@@ -25,17 +25,20 @@ Updated: 2026-08-21
 - [x] Secret scan (no real secrets; insecure seed credentials removed).
 
 ## Stage 3 — Quality
-- [x] Frontend lint: 0 errors (95 transitional warnings documented).
+- [x] Frontend lint after workspace redesign: 0 errors (87 transitional warnings documented).
 - [x] Frontend production build: Next 15.5.23, 22 static pages, type check enabled.
 - [x] Backend install/check + password helper test.
 - [x] TypeScript build checks enabled and passed.
 - [x] Mobile/desktop screenshot inspection on the live HTTPS deployment (1440×1100 and 390×844); no overflow, broken assets, or visible rendering errors found.
 - [x] Critical route and asset crawl on local standalone preview (15 routes + 16 discovered assets returned HTTP 200).
 - [x] Live HTTPS crawl: 16 frontend/API routes + 16 discovered assets returned HTTP 200.
-- [x] Live auth smoke: bcrypt admin login, JWT verification, and protected endpoint access passed.
+- [x] Live auth smoke: bcrypt Super Admin login, JWT verification, and protected endpoint access passed.
+- [x] Workspace UI/UX redesign completed: grouped role-aware sidebar, responsive header/search, new emerald design system, and operational Super Admin control center.
+- [x] Final authenticated browser verification passed at 1440×1000 and 390×844: no horizontal overflow, broken images, console/page errors, stale loading state, or incorrect dashboard counts.
+- [x] Self-hosted deployment no longer requests Vercel Analytics; local application icon added to remove favicon 404 noise.
 
 ## Verification notes
-- Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections.
+- Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections and the 2026-08-21 workspace redesign.
 - Standalone runtime verified after copying `public/` and `.next/static` as performed by the production Dockerfile.
 - Backend syntax: all JS passed `node --check`; bcrypt + legacy MD5 helper test passed.
 - Backend npm audit: 0 vulnerabilities.
@@ -60,3 +63,5 @@ Updated: 2026-08-21
 - [x] Let's Encrypt certificate issued; HTTPS health and application routes passed.
 - [x] Existing services/ports remained active and no failed systemd units were introduced.
 - [x] Rollback path and live deployment evidence documented in `docs/DEPLOYMENT-LIVE-20260821.md`.
+- [x] Redesigned release promoted atomically to `/opt/kampungdigital/releases/20260821-1412-redesign`; previous release pointer and systemd units backed up under `/opt/kampungdigital/backups/`.
+- [x] Post-promotion checks passed for 10 frontend routes, 5 authenticated API endpoints, unauthenticated 401 boundary, root-host 404 isolation, four KampungDigital/Caddy/MariaDB services, and protected existing ports `18789`, `19081`, `5901`, `6081`.

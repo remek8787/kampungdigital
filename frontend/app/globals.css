@@ -4,156 +4,94 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme to match Indonesian community management system with green primary */
-  --background: #f0f4f8;
-  --foreground: #2e2e2e;
+  --background: #f4f7f5;
+  --foreground: #17231f;
   --card: #ffffff;
-  --card-foreground: #2e2e2e;
+  --card-foreground: #17231f;
   --popover: #ffffff;
-  --popover-foreground: #2e2e2e;
-  --primary: #4caf50;
+  --popover-foreground: #17231f;
+  --primary: #15805f;
   --primary-foreground: #ffffff;
-  --secondary: #81c784;
-  --secondary-foreground: #2e2e2e;
-  --muted: #f0f4f8;
-  --muted-foreground: #6b7280;
-  --accent: #81c784;
-  --accent-foreground: #2e2e2e;
-  --destructive: #c62828;
+  --secondary: #e6f4ee;
+  --secondary-foreground: #135b47;
+  --muted: #f0f4f2;
+  --muted-foreground: #66736e;
+  --accent: #dcf5e9;
+  --accent-foreground: #125c46;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #d1d5db;
+  --border: #dce5e1;
   --input: #ffffff;
-  --ring: rgba(76, 175, 80, 0.5);
-  --chart-1: #4caf50;
-  --chart-2: #81c784;
-  --chart-3: #c8e6c9;
-  --chart-4: #a5d6a7;
-  --chart-5: #388e3c;
-  --radius: 0.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #2e2e2e;
-  --sidebar-primary: #4caf50;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #81c784;
-  --sidebar-accent-foreground: #2e2e2e;
-  --sidebar-border: #d1d5db;
-  --sidebar-ring: rgba(76, 175, 80, 0.5);
-  --logo-invert: 0;
-}
-
-/* Theme: Blue */
-[data-theme="blue"] {
-  --primary: #2196f3;
-  --secondary: #64b5f6;
-  --accent: #64b5f6;
-  --ring: rgba(33, 150, 243, 0.5);
-  --sidebar-primary: #2196f3;
-  --sidebar-accent: #64b5f6;
-  --sidebar-ring: rgba(33, 150, 243, 0.5);
-  --chart-1: #2196f3;
-  --chart-2: #64b5f6;
-  --chart-3: #bbdefb;
-  --chart-4: #90caf9;
-  --chart-5: #1976d2;
-}
-
-/* Theme: Purple */
-[data-theme="purple"] {
-  --primary: #9c27b0;
-  --secondary: #ba68c8;
-  --accent: #ba68c8;
-  --ring: rgba(156, 39, 176, 0.5);
-  --sidebar-primary: #9c27b0;
-  --sidebar-accent: #ba68c8;
-  --sidebar-ring: rgba(156, 39, 176, 0.5);
-  --chart-1: #9c27b0;
-  --chart-2: #ba68c8;
-  --chart-3: #e1bee7;
-  --chart-4: #ce93d8;
-  --chart-5: #7b1fa2;
-}
-
-/* Dark mode base */
-.dark {
-  --background: #1a1a1a;
-  --foreground: #ffffff;
-  --card: #2e2e2e;
-  --card-foreground: #ffffff;
-  --popover: #2e2e2e;
-  --popover-foreground: #ffffff;
-  --primary: #4caf50;
-  --primary-foreground: #ffffff;
-  --secondary: #388e3c;
-  --secondary-foreground: #ffffff;
-  --muted: #374151;
-  --muted-foreground: #9ca3af;
-  --accent: #81c784;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #374151;
-  --input: #374151;
-  --ring: rgba(76, 175, 80, 0.5);
-  --chart-1: #4caf50;
-  --chart-2: #81c784;
-  --chart-3: #c8e6c9;
-  --chart-4: #a5d6a7;
-  --chart-5: #388e3c;
-  --sidebar: #2e2e2e;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #4caf50;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #388e3c;
+  --ring: rgba(21, 128, 95, 0.34);
+  --chart-1: #15805f;
+  --chart-2: #2da77d;
+  --chart-3: #f1ad45;
+  --chart-4: #4d88c9;
+  --chart-5: #8759c7;
+  --radius: 0.85rem;
+  --sidebar: #102a22;
+  --sidebar-foreground: #f4fff9;
+  --sidebar-primary: #6ee7b7;
+  --sidebar-primary-foreground: #0c3024;
+  --sidebar-accent: rgba(255, 255, 255, 0.08);
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #374151;
-  --sidebar-ring: rgba(76, 175, 80, 0.5);
-}
-
-/* Dark mode + Blue theme */
-.dark[data-theme="blue"] {
-  --primary: #42a5f5;
-  --secondary: #64b5f6;
-  --accent: #64b5f6;
-  --ring: rgba(66, 165, 245, 0.5);
-  --sidebar-primary: #42a5f5;
-  --sidebar-accent: #64b5f6;
-  --sidebar-ring: rgba(66, 165, 245, 0.5);
-  --chart-1: #42a5f5;
-  --chart-2: #64b5f6;
-  --chart-3: #90caf9;
-  --chart-4: #bbdefb;
-  --chart-5: #1976d2;
-}
-
-/* Dark mode + Purple theme */
-.dark[data-theme="purple"] {
-  --primary: #ab47bc;
-  --secondary: #ba68c8;
-  --accent: #ba68c8;
-  --ring: rgba(171, 71, 188, 0.5);
-  --sidebar-primary: #ab47bc;
-  --sidebar-accent: #ba68c8;
-  --sidebar-ring: rgba(171, 71, 188, 0.5);
-  --chart-1: #ab47bc;
-  --chart-2: #ba68c8;
-  --chart-3: #ce93d8;
-  --chart-4: #e1bee7;
-  --chart-5: #7b1fa2;
-}
-
-/* Logo Theme Support */
-:root {
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(110, 231, 183, 0.45);
   --logo-invert: 0;
 }
 
-html.dark {
-  --logo-invert: 1;
+[data-theme="blue"] {
+  --primary: #256da8;
+  --secondary: #e8f1fa;
+  --secondary-foreground: #184e7b;
+  --accent: #dcecf9;
+  --accent-foreground: #184e7b;
+  --ring: rgba(37, 109, 168, 0.34);
+  --chart-1: #256da8;
+  --chart-2: #4d88c9;
 }
 
-/* Aplikasikan filter ke logo SVG */
-img[alt="Logo KampungDigital"] {
-  filter: invert(var(--logo-invert));
+[data-theme="purple"] {
+  --primary: #7952a8;
+  --secondary: #f0eafb;
+  --secondary-foreground: #56377d;
+  --accent: #eadff8;
+  --accent-foreground: #56377d;
+  --ring: rgba(121, 82, 168, 0.34);
+  --chart-1: #7952a8;
+  --chart-2: #9b74c8;
 }
+
+.dark {
+  --background: #0d1714;
+  --foreground: #edf7f2;
+  --card: #14231e;
+  --card-foreground: #edf7f2;
+  --popover: #14231e;
+  --popover-foreground: #edf7f2;
+  --primary: #4fca9e;
+  --primary-foreground: #09251b;
+  --secondary: #1c382e;
+  --secondary-foreground: #d9f8eb;
+  --muted: #1b2b26;
+  --muted-foreground: #9aaca5;
+  --accent: #24483b;
+  --accent-foreground: #e4fff4;
+  --destructive: #f87171;
+  --destructive-foreground: #321010;
+  --border: #294139;
+  --input: #172b24;
+  --ring: rgba(79, 202, 158, 0.42);
+  --sidebar: #081712;
+  --sidebar-foreground: #edf7f2;
+  --sidebar-primary: #6ee7b7;
+  --sidebar-primary-foreground: #09251b;
+  --sidebar-accent: #18362c;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #243d34;
+}
+
+html.dark { --logo-invert: 0; }
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
@@ -182,10 +120,10 @@ img[alt="Logo KampungDigital"] {
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 5px);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -197,85 +135,54 @@ img[alt="Logo KampungDigital"] {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background-image: radial-gradient(circle at 85% -10%, rgba(45, 167, 125, 0.07), transparent 32%);
+  }
+  ::selection { background: rgba(45, 167, 125, 0.22); color: #0c3024; }
+}
+
+@layer components {
+  .workspace-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white shadow-[0_1px_2px_rgba(15,23,42,.025),0_10px_28px_rgba(15,42,34,.035)];
+  }
+  .workspace-card-hover {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-[0_12px_32px_rgba(15,42,34,.08)];
+  }
+  .section-kicker {
+    @apply text-[10px] font-bold uppercase tracking-[.17em] text-emerald-700;
+  }
+  .data-value {
+    @apply text-2xl font-bold tracking-[-0.04em] text-slate-900 sm:text-3xl;
+  }
+  .soft-grid {
+    background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
-/* Responsive Table Utilities */
 @layer utilities {
-  .table-responsive {
-    @apply block overflow-x-auto -mx-3 sm:-mx-0;
-  }
-
-  .table-responsive table {
-    @apply min-w-full;
-  }
-
-  /* Mobile-optimized cards */
-  .mobile-card {
-    @apply block sm:hidden;
-  }
-
-  .desktop-table {
-    @apply hidden sm:table;
-  }
-
-  /* Responsive grid utilities */
-  .responsive-grid {
-    @apply grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
-  }
-
-  .responsive-grid-2 {
-    @apply grid gap-3 sm:gap-4 grid-cols-1 md:grid-cols-2;
-  }
-
-  .responsive-grid-3 {
-    @apply grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
-  }
-
-  /* Text truncate for mobile */
-  .mobile-truncate {
-    @apply truncate sm:text-clip;
-  }
-
-  /* Responsive padding */
-  .responsive-padding {
-    @apply p-3 sm:p-4 md:p-6;
-  }
-
-  /* Responsive spacing */
-  .responsive-space-y {
-    @apply space-y-3 sm:space-y-4 md:space-y-6;
-  }
+  .table-responsive { @apply -mx-3 block overflow-x-auto sm:mx-0; }
+  .table-responsive table { @apply min-w-full; }
+  .mobile-card { @apply block sm:hidden; }
+  .desktop-table { @apply hidden sm:table; }
+  .responsive-grid { @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4; }
+  .responsive-grid-2 { @apply grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2; }
+  .responsive-grid-3 { @apply grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3; }
+  .mobile-truncate { @apply truncate sm:text-clip; }
+  .responsive-padding { @apply p-3 sm:p-4 md:p-6; }
+  .responsive-space-y { @apply space-y-3 sm:space-y-4 md:space-y-6; }
 }
 
-/* Override table styles for better mobile experience */
 @media (max-width: 640px) {
-  .table-mobile-stack tbody tr {
-    @apply block mb-4 border rounded-lg;
-  }
-
-  .table-mobile-stack tbody td {
-    @apply block text-right py-2 px-4;
-  }
-
-  .table-mobile-stack tbody td::before {
-    content: attr(data-label);
-    @apply float-left font-semibold;
-  }
-
-  .table-mobile-stack thead {
-    @apply hidden;
-  }
+  .table-mobile-stack tbody tr { @apply mb-4 block rounded-xl border bg-white; }
+  .table-mobile-stack tbody td { @apply block px-4 py-2 text-right; }
+  .table-mobile-stack tbody td::before { content: attr(data-label); @apply float-left font-semibold; }
+  .table-mobile-stack thead { @apply hidden; }
 }
 
-/* Smooth transitions for responsive changes */
 @media (prefers-reduced-motion: no-preference) {
-  .smooth-responsive {
-    @apply transition-all duration-300 ease-in-out;
-  }
+  .smooth-responsive { @apply transition-all duration-300 ease-in-out; }
 }
