@@ -8,8 +8,9 @@ Tanggal: 2026-08-21
 - API health: `https://lab.anantasatriya.my.id/kampungdigital/api/health`
 - VPS: `43.156.128.43`
 - Reverse proxy existing: Caddy
-- Release aktif: `/opt/kampungdigital/releases/20260821-1412-redesign`
-- Release sebelumnya/rollback cepat: `/opt/kampungdigital/releases/20260821-1320`
+- Release aktif: `/opt/kampungdigital/releases/20260821-1510-showcase`
+- Rollback cepat: `/opt/kampungdigital/releases/20260821-1412-redesign`
+- Release awal: `/opt/kampungdigital/releases/20260821-1320`
 - Symlink aktif: `/opt/kampungdigital/current`
 
 ## Isolasi
@@ -29,6 +30,7 @@ Tanggal: 2026-08-21
 
 Backup Caddy sebelum perubahan disimpan di `/var/backups/kampungdigital/`.
 Backup pointer release dan unit sebelum promosi redesain disimpan di `/opt/kampungdigital/backups/` dengan cap waktu `20260821-144119`.
+Backup pointer sebelum showcase publik: `/opt/kampungdigital/backups/current-before-showcase-20260821-232759.txt`.
 
 Rollback aplikasi:
 
@@ -54,6 +56,8 @@ Rollback aplikasi:
 - Tidak ada failed systemd unit setelah deployment.
 - Login `ananta` tetap terbaca sebagai `super_admin`; dashboard live menampilkan data nyata (`1` warga dan `1` tim pengelola).
 - Browser test terautentikasi pada 1440×1000 dan 390×844 lulus tanpa horizontal overflow, gambar rusak, console/page error, atau status sinkronisasi yang menggantung.
+- Showcase publik aktif pada `/kampungdigital`; login aplikasi sekarang berada di `/kampungdigital/login`.
+- Live smoke showcase/login/dashboard/assets lulus HTTP 200, konten SEO/CTA terdeteksi, login `super_admin` dan API tetap berfungsi, root host tetap 404.
 - Vercel Analytics dilepas dari runtime self-hosted dan ikon aplikasi lokal ditambahkan agar tidak ada request analytics/favicon 404.
 
 ## Screenshot live
@@ -64,6 +68,8 @@ Rollback aplikasi:
 - `docs/screenshots/redesign/dashboard-mobile.png` — preview redesign 390×844
 - `docs/screenshots/redesign/live-dashboard-desktop.png` — verifikasi live 1440×1000
 - `docs/screenshots/redesign/live-dashboard-mobile.png` — verifikasi live 390×844
+- `docs/screenshots/showcase/showcase-desktop.png` — showcase publik 1440×1000
+- `docs/screenshots/showcase/showcase-mobile.png` — showcase publik 390×844
 
 Inspeksi visual menunjukkan halaman login dan dashboard termuat penuh, aset/logo benar, teks terbaca, tidak ada overflow horizontal, dan shell baru responsif pada desktop maupun mobile.
 

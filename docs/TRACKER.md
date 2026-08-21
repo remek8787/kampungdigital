@@ -36,6 +36,9 @@ Updated: 2026-08-21
 - [x] Workspace UI/UX redesign completed: grouped role-aware sidebar, responsive header/search, new emerald design system, and operational Super Admin control center.
 - [x] Final authenticated browser verification passed at 1440×1000 and 390×844: no horizontal overflow, broken images, console/page errors, stale loading state, or incorrect dashboard counts.
 - [x] Self-hosted deployment no longer requests Vercel Analytics; local application icon added to remove favicon 404 noise.
+- [x] Public product showcase added at `/kampungdigital` with 7 narrative sections, 6 feature modules, authentic dashboard visuals, role explanation, workflow, open-source/MIT attribution, responsive CTA, and SEO/OpenGraph metadata.
+- [x] Login moved cleanly to `/kampungdigital/login`; all logout, idle timeout, and unauthenticated dashboard redirects updated to the dedicated login route.
+- [x] Showcase preview verified at 1440×1000 and 390×844: no horizontal overflow, missing HTTP assets, broken layout, or invalid login links; final visual audit verdict GO.
 
 ## Verification notes
 - Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections and the 2026-08-21 workspace redesign.
@@ -65,3 +68,4 @@ Updated: 2026-08-21
 - [x] Rollback path and live deployment evidence documented in `docs/DEPLOYMENT-LIVE-20260821.md`.
 - [x] Redesigned release promoted atomically to `/opt/kampungdigital/releases/20260821-1412-redesign`; previous release pointer and systemd units backed up under `/opt/kampungdigital/backups/`.
 - [x] Post-promotion checks passed for 10 frontend routes, 5 authenticated API endpoints, unauthenticated 401 boundary, root-host 404 isolation, four KampungDigital/Caddy/MariaDB services, and protected existing ports `18789`, `19081`, `5901`, `6081`.
+- [x] Showcase release `/opt/kampungdigital/releases/20260821-1510-showcase` promoted atomically; backup pointer `current-before-showcase-20260821-232759.txt` created and post-deployment smoke test passed.

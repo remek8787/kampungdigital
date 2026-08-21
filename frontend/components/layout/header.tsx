@@ -98,7 +98,7 @@ export function Header({ title, subtitle, onOpenMenu, userRole = "warga" }: Head
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("currentUser");
-    window.location.href = appPath("/");
+    window.location.href = appPath("/login");
   };
 
   const resultIcon = (type: SearchResult["type"]) => {

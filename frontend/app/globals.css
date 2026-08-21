@@ -161,6 +161,13 @@ html.dark { --logo-invert: 0; }
     background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
     background-size: 24px 24px;
   }
+  .showcase-grid {
+    background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .showcase-kicker {
+    @apply text-[10px] font-bold uppercase tracking-[.2em] text-emerald-700;
+  }
 }
 
 @layer utilities {

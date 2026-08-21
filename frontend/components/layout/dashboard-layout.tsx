@@ -36,7 +36,7 @@ export function DashboardLayout({ children, title, subtitle }: DashboardLayoutPr
   useEffect(() => {
     const savedUser = localStorage.getItem("currentUser");
     if (!savedUser) {
-      router.push("/");
+      router.push("/login");
       return;
     }
     setUser(JSON.parse(savedUser));
@@ -45,7 +45,7 @@ export function DashboardLayout({ children, title, subtitle }: DashboardLayoutPr
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("currentUser");
-    router.push("/");
+    router.push("/login");
   };
 
   if (!user) {

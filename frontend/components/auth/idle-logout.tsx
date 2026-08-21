@@ -25,7 +25,7 @@ export function IdleLogout() {
           localStorage.removeItem("authToken");
           localStorage.removeItem("currentUser")
         } catch {}
-        window.location.href = appPath("/")
+        window.location.href = appPath("/login")
       }, INACTIVITY_LIMIT_MS)
     }
 
@@ -37,7 +37,7 @@ export function IdleLogout() {
     const onStorage = (e: StorageEvent) => {
       if (e.key === "currentUser") {
         if (e.newValue === null) {
-          window.location.href = appPath("/")
+          window.location.href = appPath("/login")
         } else {
           startTimer()
         }

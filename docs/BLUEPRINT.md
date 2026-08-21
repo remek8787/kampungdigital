@@ -116,6 +116,9 @@ Implementasi workspace 2026-08-21:
 - Dashboard Super Admin menjadi pusat kendali operasional: ringkasan dana/partisipasi, metrik warga-rumah-pengelola-transaksi, progres pembayaran, kondisi sistem, dan akses cepat.
 - Mobile memakai target sentuh minimal 44px, tombol aksi bertumpuk, teks sapaan dua baris, nominal aman membungkus, dan tidak boleh memiliki horizontal overflow.
 - Runtime self-hosted tidak menggunakan Vercel Analytics; aset identitas dan ikon aplikasi disajikan lokal.
+- Root publik `/kampungdigital` berfungsi sebagai showcase produk: menjelaskan manfaat, modul, peran pengguna, alur kerja, tampilan dashboard asli, lisensi, dan source GitHub tanpa memaparkan data sensitif.
+- Login aplikasi dipisahkan ke `/kampungdigital/login`; logout, sesi kedaluwarsa, dan akses dashboard tanpa sesi harus kembali ke route login tersebut, bukan ke showcase.
+- Showcase dibuat indexable dengan metadata SEO/OpenGraph berbahasa Indonesia dan CTA konsisten `Masuk aplikasi`.
 
 ## 9. Data dan privasi
 
@@ -138,7 +141,8 @@ Sebelum deploy:
 
 Deployment live 2026-08-21:
 - Release awal: `/opt/kampungdigital/releases/20260821-1320`.
-- Release aktif setelah redesain: `/opt/kampungdigital/releases/20260821-1412-redesign`, aktif melalui `/opt/kampungdigital/current`; pointer lama dan unit dibackup sebelum promosi.
+- Release redesain: `/opt/kampungdigital/releases/20260821-1412-redesign`.
+- Release showcase publik: `/opt/kampungdigital/releases/20260821-1510-showcase`; dipromosikan melalui symlink `/opt/kampungdigital/current` setelah preview desktop/mobile dan backup pointer live.
 - Frontend: `127.0.0.1:3100`; backend: `127.0.0.1:5106`; MariaDB: `127.0.0.1:3306`.
 - Unit khusus: `kampungdigital-frontend.service` dan `kampungdigital-backend.service`.
 - Database/user khusus: `kampungdigital` / `kampungdigital_app@127.0.0.1`.
