@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">KampungDigital</title><desc id="desc">Rumah dan jejaring warga</desc>
+  <rect width="256" height="256" rx="64" fill="#ECFDF5"/>
+  <path d="M44 123 128 54l84 69v78a16 16 0 0 1-16 16H60a16 16 0 0 1-16-16Z" fill="#0F766E"/>
+  <path d="M74 132h108v85H74z" fill="#065F46"/>
+  <path d="M105 217v-58a23 23 0 0 1 46 0v58" fill="#FEF3C7"/>
+  <circle cx="128" cy="93" r="14" fill="#F59E0B"/>
+  <path d="M77 109 45 82M179 109l32-27" stroke="#10B981" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="39" cy="77" r="12" fill="#10B981"/><circle cx="217" cy="77" r="12" fill="#10B981"/>
+</svg>

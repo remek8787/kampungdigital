@@ -1,0 +1,20 @@
+services:
+  # Node.js service (use with: docker compose up nextjs-standalone --build)
+  nextjs-standalone:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH:-/kampungdigital}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-/kampungdigital/api}
+        NEXT_PUBLIC_AWAL_WAKTU_PERTAMA: ${NEXT_PUBLIC_AWAL_WAKTU_PERTAMA}
+        NEXT_PUBLIC_AKHIR_WAKTU_PERTAMA: ${NEXT_PUBLIC_AKHIR_WAKTU_PERTAMA}
+        NEXT_PUBLIC_AWAL_WAKTU_KEDUA: ${NEXT_PUBLIC_AWAL_WAKTU_KEDUA}
+        NEXT_PUBLIC_AKHIR_WAKTU_KEDUA: ${NEXT_PUBLIC_AKHIR_WAKTU_KEDUA}
+    image: nextjs-standalone-image
+    container_name: kampungdigital-app
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:${HOST_PORT:-3100}:${PORT:-3000}"
+    restart: unless-stopped
