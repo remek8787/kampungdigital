@@ -71,7 +71,7 @@ Pertahankan stack referensi pada fase pertama:
 - Backend: Node.js + Express REST API.
 - Database: MySQL/MariaDB.
 - Auth: JWT Bearer, dengan hardening bertahap.
-- Deployment: service/container terisolasi di loopback, Nginx reverse proxy pada subpath `/kampungdigital/`.
+- Deployment live: service systemd terisolasi di loopback, Caddy reverse proxy pada subpath `/kampungdigital`.
 
 Routing target:
 - Frontend: `/kampungdigital/*`
@@ -123,18 +123,20 @@ Prinsip:
 
 Sebelum deploy:
 1. Akses SSH/sudo VPS terverifikasi.
-2. Audit service/port/resource/Nginx/TLS existing.
+2. Audit service, port, resource, reverse proxy, dan TLS existing.
 3. Tentukan webroot/service names dan port yang tidak bentrok.
-4. Backup konfigurasi Nginx dan service terkait.
+4. Backup konfigurasi reverse proxy dan service terkait.
 5. Siapkan env private dan database khusus KampungDigital.
 6. Build dan test lokal.
 
-Deploy:
-- Jangan mengubah root `lab.anantasatriya.my.id` selain menambah location `/kampungdigital/` dan `/kampungdigital/api/` secara terukur.
-- Gunakan service/container bernama unik `kampungdigital-*`.
-- Bind frontend/backend/database ke private/loopback network.
-- Jalankan `nginx -t` sebelum reload.
-- Rollback: restore config backup, stop service KampungDigital, remove only new locations/symlink.
+Deployment live 2026-08-21:
+- Release: `/opt/kampungdigital/releases/20260821-1320`, aktif melalui `/opt/kampungdigital/current`.
+- Frontend: `127.0.0.1:3100`; backend: `127.0.0.1:5106`; MariaDB: `127.0.0.1:3306`.
+- Unit khusus: `kampungdigital-frontend.service` dan `kampungdigital-backend.service`.
+- Database/user khusus: `kampungdigital` / `kampungdigital_app@127.0.0.1`.
+- Reverse proxy existing ternyata Caddy. Konfigurasinya dibackup, divalidasi dengan `caddy validate`, dan di-reload tanpa menghentikan service lain.
+- Root host tidak dialihkan ke aplikasi; hanya `/kampungdigital` dan `/kampungdigital/api/*` yang dirutekan.
+- Rollback: ubah symlink release, restart hanya unit KampungDigital, atau pulihkan backup Caddy setelah validasi.
 
 ## 11. Acceptance criteria fase pertama
 
@@ -162,9 +164,12 @@ Portal warga, pengumuman, status iuran, laporan publik teragregasi tanpa memboco
 ### Fase 4 — Multi-kampung/SaaS
 Tenant isolation, onboarding kampung, branding per tenant, paket/limit, backup per tenant. Perlu desain arsitektur dan persetujuan baru; jangan dicampur diam-diam ke fase awal.
 
-## 13. Status dan blocker awal
+## 13. Status live
 
-- DNS `lab.anantasatriya.my.id` sudah menuju `43.156.128.43`.
-- TLS saat audit awal gagal handshake (`tlsv1 alert internal error`).
-- SSH `ubuntu@43.156.128.43` menolak public key mesin Alvii.
-- Karena itu deployment live masih `[blocked]` sampai akses SSH yang sah tersedia atau key Alvii dipasang.
+- DNS `lab.anantasatriya.my.id` menuju `43.156.128.43`.
+- Preview aktif pada `https://lab.anantasatriya.my.id/kampungdigital`.
+- TLS Let's Encrypt berhasil diterbitkan dan HTTPS health check lulus.
+- Login operator bcrypt, verifikasi JWT, endpoint terproteksi, route, dan aset telah diuji.
+- Screenshot live desktop/mobile tersimpan di `docs/screenshots/` dan telah diinspeksi.
+- Service lama yang diperiksa tetap aktif; deployment KampungDigital hanya memakai unit, direktori, database, dan port loopback khusus.
+- Bukti teknis lengkap: `docs/DEPLOYMENT-LIVE-20260821.md`.

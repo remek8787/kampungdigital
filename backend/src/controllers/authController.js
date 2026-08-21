@@ -11,8 +11,6 @@ export const login = async (req, res) => {
   try {
     const { identifier, password, loginType } = req.body;
 
-    console.log("[AUTH] Login attempt:", { identifier, loginType });
-
     if (!identifier || !password || !loginType) {
       return res.status(400).json({
         success: false,
@@ -65,7 +63,6 @@ export const login = async (req, res) => {
     const [rows] = await pool.query(userQuery, userParams);
 
     if (rows.length === 0) {
-      console.log("[AUTH] User not found:", identifier);
       return res.status(401).json({
         success: false,
         message:
@@ -76,14 +73,6 @@ export const login = async (req, res) => {
     }
 
     user = rows[0];
-    console.log("[AUTH] User found:", {
-      id: user.id,
-      nama: user.nama,
-      role_db: user.role,
-      jabatan: user.jabatan,
-      computed_role: user.user_role || user.role,
-    });
-
     // Password verification. New hashes use bcrypt; legacy MD5/plaintext is upgraded on success.
     const storedPassword = loginType === "phone" ? user.password_custom : user.stored_password;
     if (!storedPassword) {
@@ -102,7 +91,6 @@ export const login = async (req, res) => {
     }
 
     if (!isPasswordValid) {
-      console.log("[AUTH] Invalid password for user:", identifier);
       return res.status(401).json({
         success: false,
         message: "Password salah",
@@ -127,8 +115,6 @@ export const login = async (req, res) => {
     const token = jwt.sign(tokenPayload, JWT_SECRET, {
       expiresIn: JWT_EXPIRES_IN,
     });
-
-    console.log("[AUTH] Login successful for:", user.nama);
 
     // Determine id_warga untuk global identifier (untuk tema, dll)
     let id_warga_global = null;
@@ -169,7 +155,7 @@ export const login = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Terjadi kesalahan pada server",
-      error: error.message,
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };

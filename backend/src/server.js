@@ -29,6 +29,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5006;
+const HOST = process.env.HOST || "127.0.0.1";
 if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
   throw new Error("JWT_SECRET wajib diisi minimal 32 karakter");
 }
@@ -117,9 +118,9 @@ app.use((req, res) => {
 // ✅ Jalankan koneksi database & server
 const startServer = async () => {
   try {
-    app.listen(PORT, () => {
+    app.listen(PORT, HOST, () => {
       testConnection();
-      console.log(`KampungDigital API aktif di port ${PORT}`)
+      console.log(`KampungDigital API aktif di ${HOST}:${PORT}`)
     });
   } catch (error) {
     process.exit(1);

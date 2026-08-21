@@ -29,8 +29,10 @@ Updated: 2026-08-21
 - [x] Frontend production build: Next 15.5.23, 22 static pages, type check enabled.
 - [x] Backend install/check + password helper test.
 - [x] TypeScript build checks enabled and passed.
-- [ ] Mobile/desktop screenshot inspection.
+- [x] Mobile/desktop screenshot inspection on the live HTTPS deployment (1440×1100 and 390×844); no overflow, broken assets, or visible rendering errors found.
 - [x] Critical route and asset crawl on local standalone preview (15 routes + 16 discovered assets returned HTTP 200).
+- [x] Live HTTPS crawl: 16 frontend/API routes + 16 discovered assets returned HTTP 200.
+- [x] Live auth smoke: bcrypt admin login, JWT verification, and protected endpoint access passed.
 
 ## Verification notes
 - Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections.
@@ -44,13 +46,17 @@ Updated: 2026-08-21
 ## Stage 4 — External artifacts
 - [x] Coret concept map created and shared: https://coret.id/share/957b3603bb8e48acc76141334fa6da0835195f1b85ab8d6d
 - [x] Git repo initialized and remote connected.
-- [x] Commit/push verified on `main` (`728026c`).
+- [x] Commit/push verified on `main` (`728026c`, then quality tracker fix `ae2d3bd`).
 
 ## Stage 5 — Deployment
 - [x] DNS resolves to VPS.
-- [ ] SSH access available. [blocked: public key rejected]
-- [ ] TLS/Nginx preflight. [blocked: TLS handshake currently fails]
-- [ ] VPS backup and port allocation.
-- [ ] Database/service deployment.
-- [ ] Nginx subpath configuration.
-- [ ] HTTPS smoke test and rollback verification.
+- [x] SSH/sudo access verified.
+- [x] Read-only preflight completed; reverse proxy identified as Caddy (not Nginx).
+- [x] Existing Caddy configuration backed up before each change.
+- [x] Dedicated ports allocated: frontend `127.0.0.1:3100`, backend `127.0.0.1:5106`, MariaDB `127.0.0.1:3306`.
+- [x] Dedicated MariaDB database/user initialized; 8 tables and bcrypt operator account verified.
+- [x] Isolated systemd services deployed and enabled: `kampungdigital-frontend`, `kampungdigital-backend`.
+- [x] Dedicated Caddy host/subpath routing added; configuration validation and reload passed.
+- [x] Let's Encrypt certificate issued; HTTPS health and application routes passed.
+- [x] Existing services/ports remained active and no failed systemd units were introduced.
+- [x] Rollback path and live deployment evidence documented in `docs/DEPLOYMENT-LIVE-20260821.md`.
