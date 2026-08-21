@@ -119,6 +119,7 @@ Implementasi workspace 2026-08-21:
 - Root publik `/kampungdigital` berfungsi sebagai showcase produk: menjelaskan manfaat, modul, peran pengguna, alur kerja, tampilan dashboard asli, lisensi, dan source GitHub tanpa memaparkan data sensitif.
 - Login aplikasi dipisahkan ke `/kampungdigital/login`; logout, sesi kedaluwarsa, dan akses dashboard tanpa sesi harus kembali ke route login tersebut, bukan ke showcase.
 - Showcase dibuat indexable dengan metadata SEO/OpenGraph berbahasa Indonesia dan CTA konsisten `Masuk aplikasi`.
+- Showcase wajib menampilkan jejak pengembangan yang transparan: fondasi proyek asal `https://github.com/heri99123/nalarin-dapung`, apresiasi kepada Heri Tico, serta tautan adaptasi independen `https://github.com/remek8787/kampungdigital` agar hubungan upstream dan turunannya jelas.
 
 ## 9. Data dan privasi
 

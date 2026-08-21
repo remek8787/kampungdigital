@@ -39,6 +39,7 @@ Updated: 2026-08-21
 - [x] Public product showcase added at `/kampungdigital` with 7 narrative sections, 6 feature modules, authentic dashboard visuals, role explanation, workflow, open-source/MIT attribution, responsive CTA, and SEO/OpenGraph metadata.
 - [x] Login moved cleanly to `/kampungdigital/login`; all logout, idle timeout, and unauthenticated dashboard redirects updated to the dedicated login route.
 - [x] Showcase preview verified at 1440×1000 and 390×844: no horizontal overflow, missing HTTP assets, broken layout, or invalid login links; final visual audit verdict GO.
+- [x] Public showcase now exposes a clear upstream lineage: `heri99123/nalarin-dapung` → `remek8787/kampungdigital`, with MIT attribution and appreciation to Heri Tico.
 
 ## Verification notes
 - Frontend production build: passed on Next 15.5.23, 22 static pages; no ignored TypeScript build errors. Rebuilt after final subpath asset corrections and the 2026-08-21 workspace redesign.

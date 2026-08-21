@@ -253,9 +253,25 @@ export default function ShowcasePage() {
           <p className="mt-7 text-xs font-bold uppercase tracking-[.2em] text-emerald-300">Teknologi yang berpihak pada komunitas</p>
           <h2 className="mt-5 text-3xl font-bold tracking-[-0.045em] sm:text-5xl">Dibuka untuk dipakai, dipelajari, dan dikembangkan bersama.</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-emerald-50/72">KampungDigital dikembangkan sebagai proyek independen berbasis perangkat lunak sumber terbuka. Tujuannya sederhana: membantu administrasi lingkungan menjadi lebih tertib tanpa menghilangkan semangat gotong royong.</p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
+
+          <div className="mx-auto mt-9 grid max-w-3xl gap-3 text-left sm:grid-cols-[1fr_auto_1fr] sm:items-stretch">
+            <a href="https://github.com/heri99123/nalarin-dapung" target="_blank" rel="noreferrer" className="group rounded-2xl border border-white/15 bg-white/[0.07] p-4 transition hover:bg-white/[0.12]">
+              <span className="flex items-center justify-between gap-3"><span className="text-[10px] font-bold uppercase tracking-[.16em] text-emerald-300">Fondasi proyek asal</span><Github className="h-4 w-4 text-emerald-200/70" /></span>
+              <strong className="mt-2 block text-sm text-white">heri99123/nalarin-dapung</strong>
+              <span className="mt-1 block text-xs leading-5 text-emerald-50/60">Sumber open-source yang menjadi awal perjalanan pengembangan.</span>
+            </a>
+            <span className="hidden items-center justify-center text-emerald-300/60 sm:flex"><ArrowRight className="h-5 w-5" /></span>
+            <a href="https://github.com/remek8787/kampungdigital" target="_blank" rel="noreferrer" className="group rounded-2xl border border-emerald-300/25 bg-emerald-300/[0.09] p-4 transition hover:bg-emerald-300/[0.14]">
+              <span className="flex items-center justify-between gap-3"><span className="text-[10px] font-bold uppercase tracking-[.16em] text-emerald-300">Adaptasi independen</span><Github className="h-4 w-4 text-emerald-200/70" /></span>
+              <strong className="mt-2 block text-sm text-white">remek8787/kampungdigital</strong>
+              <span className="mt-1 block text-xs leading-5 text-emerald-50/60">Rebranding, hardening, UI/UX, dokumentasi, dan deployment tersendiri.</span>
+            </a>
+          </div>
+
+          <p className="mx-auto mt-4 max-w-2xl text-xs leading-5 text-emerald-50/55">Terima kasih kepada Heri Tico dan proyek Nalarin DaPUNG yang telah membuka fondasinya melalui lisensi MIT.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="/login" className="inline-flex h-12 items-center rounded-xl bg-emerald-300 px-5 text-sm font-bold text-emerald-950 hover:bg-emerald-200">Masuk aplikasi <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            <a href="https://github.com/remek8787/kampungdigital" target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-xl border border-white/20 bg-white/[0.07] px-5 text-sm font-semibold text-white hover:bg-white/[0.12]"><Github className="mr-2 h-4 w-4" /> Lihat source</a>
+            <a href="https://github.com/remek8787/kampungdigital" target="_blank" rel="noreferrer" className="inline-flex h-12 items-center rounded-xl border border-white/20 bg-white/[0.07] px-5 text-sm font-semibold text-white hover:bg-white/[0.12]"><Github className="mr-2 h-4 w-4" /> Source KampungDigital</a>
           </div>
         </div>
       </section>
@@ -263,7 +279,7 @@ export default function ShowcasePage() {
       <footer className="bg-[#0b211b] py-8 text-emerald-50/60">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 text-xs sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
           <div className="flex items-center gap-3"><Image src={appPath("/kampungdigital-mark.svg")} alt="" width={36} height={36} className="h-9 w-9 rounded-lg bg-white p-1" /><span><strong className="block text-sm text-white">KampungDigital</strong><span>Administrasi kampung yang lebih tertata.</span></span></div>
-          <div className="flex flex-wrap gap-x-5 gap-y-2"><a href="#fitur" className="hover:text-white">Fitur</a><a href="#cara-kerja" className="hover:text-white">Cara kerja</a><Link href="/login" className="hover:text-white">Masuk</Link><span>Lisensi MIT</span></div>
+          <div className="flex flex-wrap gap-x-5 gap-y-2"><a href="#fitur" className="hover:text-white">Fitur</a><a href="#cara-kerja" className="hover:text-white">Cara kerja</a><Link href="/login" className="hover:text-white">Masuk</Link><a href="https://github.com/heri99123/nalarin-dapung" target="_blank" rel="noreferrer" className="hover:text-white">Proyek asal</a><span>Lisensi MIT</span></div>
           <p className="flex items-center gap-2"><FileText className="h-3.5 w-3.5" /> © 2026 Heri Tico · Adaptasi independen KampungDigital</p>
         </div>
       </footer>
